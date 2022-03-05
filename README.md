@@ -69,3 +69,16 @@
     Chu y: generics.UpdateAPIView tham so default la 'pk'.
     Muon thay doi phai set: lookup_field ="name_field"
 ```
+
+![code example](./img/codeViews5.png)
+
+```
+    dung viewSets.ModelViewSet: ho tro tu a -> z
+```
+
+## Hoc ve Urls
+
+` Co hai kieu dung`
+![code example](./img/codeUrls1.png)
+
+![code example](./img/codeUrls2.png)
