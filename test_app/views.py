@@ -23,6 +23,7 @@ def simple(request):
 
 #----------------------------------------------------------------------
 
+
 class Simpleview(APIView):
     def post(self, request):
         serializer = SimpleviewSerializer(data=request.data)

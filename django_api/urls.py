@@ -19,7 +19,6 @@ from test_app.views import simple, Simpleview, SimpleView2, SimpleGenerics, Simp
 from django.conf import settings
 
 from rest_framework.routers import DefaultRouter
-
 router = DefaultRouter()
 router.register("simple_viewset", SimpleViewset)
 
