@@ -118,3 +118,21 @@ volumes:
     postgres:
 
 ```
+
+# Tool su dung
+
+## Using django-seed sinh data ngau nhien
+
+```
+pip install django-seed
+khai bao "django_seed" trong setting
+
+python manage.py seed new_app --number=10
+```
+
+## debug_toolbar
+
+```
+pip install django-debug-toolbar
+khai bao "debug_toolbar" trong setting
+```

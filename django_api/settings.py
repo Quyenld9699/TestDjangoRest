@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -39,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'test_app',
+    'new_app',
+    'django_seed',
     'debug_toolbar'
 ]
 
@@ -79,6 +82,12 @@ WSGI_APPLICATION = 'django_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+DB_NAME = config("NAME")
+DB_USER = config("DB_USER")
+DB_PASSWORD = config("PASSWORD")
+DB_HOST = config("HOST")
+DB_PORT = config("PORT")
+
 DATABASES = {
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
@@ -86,11 +95,11 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        "NAME": 'testdb',
-        "USER": 'admin',
-        "PASSWORD": 'admin123',
-        "HOST": '127.0.0.1',
-        "PORT":'5000'
+        "NAME": DB_NAME,
+        "USER": DB_USER,
+        "PASSWORD": DB_PASSWORD,
+        "HOST": DB_HOST,
+        "PORT": DB_PORT
     }
 }
 
