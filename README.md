@@ -136,3 +136,11 @@ python manage.py seed new_app --number=10
 pip install django-debug-toolbar
 khai bao "debug_toolbar" trong setting
 ```
+
+# Custom Users
+
+![code example](./img/customUserModel.png)
+
+```
+delete old db => can migates new app
+```
