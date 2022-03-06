@@ -82,3 +82,39 @@
 ![code example](./img/codeUrls1.png)
 
 ![code example](./img/codeUrls2.png)
+
+## Setting postgresql
+
+![code example](./img/settingdb.png)
+
+```
+    pip install psycopg2-binary
+```
+
+### Docker-compose setup
+
+```
+version: "3"
+
+services:
+    postgres:
+        container_name: postgres_container
+        image: postgres
+        environment:
+            POSTGRES_USER: admin
+            POSTGRES_PASSWORD: admin123
+            PGDATA: /data/postgres
+        volumes:
+            - postgres:/data/postgres
+        ports:
+            - "5000:5432"
+        networks:
+            - postgres
+        restart: unless-stopped
+networks:
+    postgres:
+        driver: bridge
+volumes:
+    postgres:
+
+```
