@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 
 class CustomUserManager(BaseUserManager):
+    # viet ham thay the create() data in data base
     def _create_user(self, email, password, **extra_field):
         if not email:
             raise ValueError("Email field is required!")
@@ -11,6 +12,7 @@ class CustomUserManager(BaseUserManager):
         user.save()
         return user
     
+    # ham thay the tao superuser
     def create_superuser(self, email, password, **extra_field):
         extra_field.setdefault('is_staff', True)
         extra_field.setdefault('is_superuser', True)
@@ -33,7 +35,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     is_superuser = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
 
-    USERNAME_FIELD = "email"
+    USERNAME_FIELD = "email"  # khai bao overide username dang nhap bang email
     objects = CustomUserManager()
 
     def __str__(self):

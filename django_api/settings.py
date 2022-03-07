@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'test_app',
     'new_app',
     'user',
+    'gateway',
     'django_seed',
     'debug_toolbar'
 ]

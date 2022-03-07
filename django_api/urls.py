@@ -24,6 +24,7 @@ router.register("simple_viewset", SimpleViewset)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('gateway/', include("gateway.urls")),
     path("simple/", simple),
     path("simpleview/", Simpleview.as_view()),
     path("simpleview/<int:id>", Simpleview.as_view()),
