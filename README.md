@@ -144,3 +144,16 @@ khai bao "debug_toolbar" trong setting
 ```
 delete old db => can migates new app
 ```
+
+# Authenticated
+
+```
+    khai bao authentication_classes default trong settings:
+        REST_FRAMEWORK = {
+            "DEFAULT_AUTHENTICATION_CLASSES": ("gateway.authentication.Authentication",)
+        }
+```
+
+```
+    "gateway.authentication.Authentication" la class trong app gateway, file authentication
+```
